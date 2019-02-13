@@ -1,0 +1,168 @@
+*{
+    font-family: sans-serif;
+}
+#cart{
+    max-width: 400px;
+}
+.cart-item{
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr 1fr 1fr 1fr;;
+    grid-template-rows: 1fr;
+    padding: 10px 0;
+}
+.cart-item.notaval{
+    grid-template-columns: 1fr 5fr 1fr;
+}
+.cart-item:not(:first-child){
+    border-top: 1px solid black;
+}
+.product-price{
+    margin-right: 20px;
+}
+.cart-item .count{
+    outline: none;
+    cursor: pointer;
+    border: 1px solid #333;
+    background-color: #333;
+    color: #fff;
+    -webkit-appearance: none;
+    width: 40px;
+    padding: 5px;
+}
+.cart-item .count[disabled]{
+    cursor: default;
+    opacity: 0.2;
+    background-color: transparent;
+    color: #333;
+}
+.cart-item .nalabel{
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cart-items-wrap{
+    margin: 20px 0;
+}
+.cart-summary, .product-price{
+    text-align: right;
+}
+.product-quantity{
+    text-align: center;
+}
+#products{
+    display: flex;
+    justify-content: space-evenly;
+}
+p{
+    margin: 0 0 5px 0;
+}
+.desc{
+    padding: 15px;
+    border: 1px solid #c0c0c040;
+}
+.product{
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+form{
+    margin-top: 30px;
+    max-width: 300px;
+    box-sizing: border-box;
+    padding: 15px;
+    background-color: #ccc;
+}
+form input, form textarea{
+    outline: none;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px;
+    max-width: 300px;
+    border: 1px solid #666;
+    margin-bottom: 20px;
+}
+form .caption{
+   font-weight: 700;
+    margin-bottom: 10px;
+}
+form button{
+    -webkit-appearance: none;
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+    background: #666;
+    color: #fff;
+}
+
+#revblock{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-content: stretch;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+#revblock .revitem{
+    position: relative;
+    box-sizing: border-box;
+    border: 1px solid #999;
+    padding: 15px 15px 50px;
+    display: flex;
+    flex: 0 0 200px;
+    flex-direction: column;
+}
+
+#revblock .revitem .revid{
+    font-size: 12px;
+    color: #666;
+    display: block;
+    margin-bottom: 20px;
+}
+#revblock .revitem [data-approve]{
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    width: 20px;
+    opacity: 1;
+    transition: all 0.3s ease;
+}
+#revblock .revitem [data-approve="false"]{
+    cursor: pointer;
+}
+#revblock .revitem [data-delete]{
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    cursor: pointer;
+    width: 15px;
+    opacity: 1;
+    transition: all 0.3s ease;
+}
+#revblock .revitem [data-approve="false"] svg use{
+    fill: #ccc;
+}
+#revblock .revitem [data-approve="true"] svg use{
+    fill: #008000;
+}
+
+#revblock .revitem [data-approve] svg{
+    width: 20px;
+    height: 20px;
+}
+#revblock .revitem [data-delete] svg{
+    width: 15px;
+    height: 15px;
+}
+#revblock .revitem [data-delete] svg use{
+    fill: #333;
+}
+#revblock .revitem [data-delete]:hover,
+#revblock .revitem [data-delete]:focus,
+#revblock .revitem [data-approve="false"]:hover,
+#revblock .revitem [data-approve="false"]:focus{
+    opacity: 0.7;
+}
